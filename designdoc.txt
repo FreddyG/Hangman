@@ -14,6 +14,7 @@ methodes:
 algorithm
 evil_algorithm
 contains
+pick_word, kiest woord als evil uit staat
 
 
 PSEUDO CODE
@@ -60,3 +61,5 @@ class word{
   char theword[]
   char guessedletters[]
 }
+
+***more advanced sketches of UIs.
