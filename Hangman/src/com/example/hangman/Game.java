@@ -13,20 +13,19 @@ import android.widget.TextView;
 
 public class Game extends Activity {
 	public TextView Moves;
-
+	public int movesLeft = 5;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
 		Moves = (TextView) findViewById(R.id.something);
-		Moves.setText("MovesLeft :");
+		Moves.setText("MovesLeft : " + movesLeft);
 	}
-	Context mContext = null;
-	public int movesLeft = 5;
 	
-	public Game(Context context){
-      this.mContext = context;
-    }
+	
+	
+	
+	
 	
     public ArrayList<String> words = new ArrayList<String>();
     
@@ -49,6 +48,7 @@ public class Game extends Activity {
 	
 	public void Restartgame(View v) {
 	  movesLeft = 10;
+	  Moves.setText("MovesLeft : " + movesLeft);
 	}
 
 }

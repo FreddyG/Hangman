@@ -39,9 +39,7 @@
         android:onClick="Restartgame"
         android:text="Restart" />
 
-  <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="sTART" />
+  
 
   <TextView android:text="TextView"
     android:id="@+id/something"
