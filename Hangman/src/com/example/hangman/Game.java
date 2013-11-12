@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class Game extends Activity {
 	public TextView Moves;
+	public TextView Theword;
 	public int movesLeft = 5;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,9 @@ public class Game extends Activity {
 		setContentView(R.layout.activity_game);
 		Moves = (TextView) findViewById(R.id.something);
 		Moves.setText("MovesLeft : " + movesLeft);
+		
+		Theword = (TextView) findViewById(R.id.theword);
+		Theword.setText("_ _ _ _ _ _");
 	}
 	
 	
