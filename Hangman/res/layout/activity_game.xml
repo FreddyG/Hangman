@@ -62,12 +62,11 @@
       android:layout_height="wrap_content"
       android:layout_alignBaseline="@+id/button2"
       android:layout_alignBottom="@+id/button2"
-      android:layout_alignParentRight="true"
-      android:ems="10"
+      android:layout_toRightOf="@+id/something"
+      android:maxLength="1"
+      android:ems="4"
+      android:imeOptions="actionSend"
       android:inputType="text"
-      android:imeOptions="actionSend" >
-
-      <requestFocus />
-  </EditText>
+       />
 
 </RelativeLayout>

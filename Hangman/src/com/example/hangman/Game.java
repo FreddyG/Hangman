@@ -30,13 +30,17 @@ public class Game extends Activity {
 		Theword = (TextView) findViewById(R.id.theword);
 		Theword.setText("_ _ _ _ _ _");
 		
-		EditText editText = (EditText) findViewById(R.id.input);
+	    final EditText editText = (EditText) findViewById(R.id.input);
 		editText.setOnEditorActionListener(new OnEditorActionListener() {
 		    @Override
 		    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 		        boolean handled = false;
 		        if (actionId == EditorInfo.IME_ACTION_SEND) {
-		        	Moves.setText("MovesLeft2 : " + movesLeft);
+		        	String input = editText.getText().toString();
+		        	domove(input);
+		        	editText.setText("", TextView.BufferType.EDITABLE);
+
+		        	
 		            handled = true;
 		        }
 		        return handled;
@@ -52,7 +56,26 @@ public class Game extends Activity {
 	
 	
 	
-    public ArrayList<String> words = new ArrayList<String>();
+    void domove(String input) {
+		movesLeft = movesLeft - 1;
+		
+		Moves.setText("MovesLeft : " + movesLeft + input);
+		
+		
+		
+		if(movesLeft==0){
+			//pop up "helaas woord niet geraden"
+		}
+		
+	}
+
+
+
+
+
+
+
+	public ArrayList<String> words = new ArrayList<String>();
     
 	    
 	
