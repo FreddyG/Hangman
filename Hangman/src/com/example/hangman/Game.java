@@ -7,13 +7,18 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 public class Game extends Activity {
 	public TextView Moves;
 	public TextView Theword;
+	
 	public int movesLeft = 5;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +29,23 @@ public class Game extends Activity {
 		
 		Theword = (TextView) findViewById(R.id.theword);
 		Theword.setText("_ _ _ _ _ _");
+		
+		EditText editText = (EditText) findViewById(R.id.input);
+		editText.setOnEditorActionListener(new OnEditorActionListener() {
+		    @Override
+		    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+		        boolean handled = false;
+		        if (actionId == EditorInfo.IME_ACTION_SEND) {
+		        	Moves.setText("MovesLeft2 : " + movesLeft);
+		            handled = true;
+		        }
+		        return handled;
+		    }
+
+		
+		});
 	}
+	
 	
 	
 	
